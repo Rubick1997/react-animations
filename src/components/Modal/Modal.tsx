@@ -3,10 +3,12 @@ import React from "react";
 import "./Modal.css";
 
 const Modal: React.FunctionComponent<{
-  show: boolean;
+  show: string;
   closed: () => void;
 }> = ({ show, closed }) => {
-  const cssClasses = `Modal ${show ? "ModalOpen" : "ModalClosed"}`;
+  const cssClasses = `Modal ${
+    show === "entering" ? "ModalOpen" : show === "exiting" && "ModalClosed"
+  }`;
 
   return (
     <div className={cssClasses}>
