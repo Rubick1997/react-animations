@@ -18,7 +18,12 @@ const Modal: React.FunctionComponent<{
       unmountOnExit
       in={show}
       timeout={animationTiming}
-      classNames="fade-slide"
+      classNames={{
+        enter: "",
+        enterActive: "ModalOpen",
+        exit: "",
+        exitActive: "ModalClose",
+      }}
     >
       <div className="Modal">
         <h1>A Modal</h1>
